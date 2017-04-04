@@ -29,7 +29,16 @@ def number_of_customers_per_state(customers):
     }
     """
     # Write your code here
-    pass
+    data_dict = {}
+    for state in customers:
+        x = state
+        try:
+            y = len(customers[state]
+        except TypeError:
+            y = 0
+        data_dict[x] = y
+    return data_dict
+        
 
 
 class NumberOfCustomersPerStateTestCase(unittest.TestCase):
