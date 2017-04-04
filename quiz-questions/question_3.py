@@ -39,7 +39,18 @@ def eldest_customer_per_state(customers):
     }
     """
     # Write your code here
-    pass
+    data_dict = {}
+    for state in customers:
+        x = state
+        y = 0
+        try:
+            for dic in customers[x]:
+                if dic['age'] > y:
+                    y = dic['age']
+        except TypeError:
+            y = None
+        data_dict[x] = y
+    return data_dict
 
 
 class EldestCustomerTestCase(unittest.TestCase):
