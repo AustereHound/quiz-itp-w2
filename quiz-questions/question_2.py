@@ -33,7 +33,7 @@ def number_of_customers_per_state(customers):
     for state in customers:
         x = state
         try:
-            y = len(customers[state]
+            y = len(customers[state])
         except TypeError:
             y = 0
         data_dict[x] = y
