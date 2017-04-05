@@ -42,12 +42,14 @@ def eldest_customer_per_state(customers):
     data_dict = {}
     for state in customers:
         x = state
-        y = 0
+        z = 0
         try:
             for dic in customers[x]:
-                if dic['age'] > y:
-                    y = dic['age']
-        except TypeError:
+                while z < dic['age']:
+                    count += 1
+                    z = dic['age']
+            y = customers[x][count]
+        except IndexError:
             y = None
         data_dict[x] = y
     return data_dict
